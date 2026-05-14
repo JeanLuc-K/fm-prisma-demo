@@ -1,0 +1,29 @@
+model Author {
+  id    String @id @default(uuid())
+  email String @unique
+  name  String
+  books Book[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Publisher {
+  id    String @id @default(uuid())
+  name  String @unique
+  books Book[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User{
+  id    String @id @default(uuid())
+  name  String @unique
+  reviews Review[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+}
